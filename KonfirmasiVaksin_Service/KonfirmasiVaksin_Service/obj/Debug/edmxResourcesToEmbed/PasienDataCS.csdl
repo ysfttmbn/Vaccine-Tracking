@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VaksinTracking_05Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Data_Pasien">
+    <Key>
+      <PropertyRef Name="id_pasien" />
+    </Key>
+    <Property Name="id_pasien" Type="Int32" Nullable="false" />
+    <Property Name="no_rekam_medis" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_vaksin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nik_pasien" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="PasienDataCS" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Data_Pasien" EntityType="Self.Data_Pasien" />
+  </EntityContainer>
+</Schema>

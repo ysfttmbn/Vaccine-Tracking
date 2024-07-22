@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VaksinTracking_05ModelStoreContainer" CdmEntityContainer="PasienDataCS">
+    <EntitySetMapping Name="Data_Pasien">
+      <EntityTypeMapping TypeName="VaksinTracking_05Model.Data_Pasien">
+        <MappingFragment StoreEntitySet="Data_Pasien">
+          <ScalarProperty Name="id_pasien" ColumnName="id_pasien" />
+          <ScalarProperty Name="no_rekam_medis" ColumnName="no_rekam_medis" />
+          <ScalarProperty Name="id_vaksin" ColumnName="id_vaksin" />
+          <ScalarProperty Name="nik_pasien" ColumnName="nik_pasien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

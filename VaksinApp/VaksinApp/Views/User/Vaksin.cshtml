@@ -1,0 +1,252 @@
+﻿@{
+    ViewBag.Title = "Vaksin";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from monster.de-template.com/Kacovid/index-hero-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 May 2023 13:57:54 GMT -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vaksin Tracker - Vaksin</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Assets/images/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Assets/css/bootstrap.min.css">
+    <!-- Typography CSS -->
+    <link rel="stylesheet" href="~/Assets/css/typography.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/Assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="~/Assets/css/responsive.css">
+</head>
+
+
+<body class="sidebar-main-menu">
+    <!-- loader Start -->
+    <div id="loading">
+        <div id="loading-center">
+
+        </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <div class="iq-sidebar">
+            <div class="iq-sidebar-logo d-flex justify-content-between">
+                <a href="@Url.Action("Index", "User")">
+                    <img src="~/Assets/images/logo.png" class="img-fluid" alt="">
+                    <span>Vaksin</span>
+                </a>
+                <div class="iq-menu-bt-sidebar">
+                    <div class="iq-menu-bt align-self-center">
+                        <div class="wrapper-menu">
+                            <div class="main-circle"><i class="ri-more-fill"></i></div>
+                            <div class="hover-circle"><i class="ri-more-2-fill"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sidebar-scrollbar">
+                <nav class="iq-sidebar-menu">
+                    <ul id="iq-sidebar-toggle" class="iq-menu">
+                        <li>
+                            <a href="@Url.Action("Index", "User")" class="iq-waves-effect"><i class="ri-home-8-fill"></i><span>Dashboard</span></a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Vaksin", "User")" class="iq-waves-effect"><i class="lab la-mendeley"></i><span>Vaksin</span></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="p-3"></div>
+            </div>
+        </div>
+        <div id="content-page" class="content-page">
+            <!-- TOP Nav Bar -->
+            <div class="iq-top-navbar">
+                <div class="iq-navbar-custom">
+                    <div class="iq-sidebar-logo">
+                        <div class="top-logo">
+                            <a class="logo">
+                                <img src="~/Assets/images/logo.png" class="img-fluid" alt="">
+                                <span>XRay</span>
+                            </a>
+                        </div>
+                    </div>
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="ri-menu-3-line"></i>
+                        </button>
+                        <div class="iq-menu-bt align-self-center">
+                            <div class="wrapper-menu">
+                                <div class="main-circle"><i class="ri-more-fill"></i></div>
+                                <div class="hover-circle"><i class="ri-more-2-fill"></i></div>
+                            </div>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto navbar-list">
+                                <li class="nav-item iq-full-screen">
+                                    <a href="#" class="iq-waves-effect" id="btnFullscreen"><i class="ri-fullscreen-line"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="navbar-list">
+                            <li>
+                                <div class="d-inline-block w-100 text-center p-3">
+                                    <a class="bg-primary iq-sign-btn" role="button" @Html.ActionLink("Logout", "Logout", "Akun", new { @class = "ri-login-box-line ml-2" })</a>
+                                </div>
+                                <div class="iq-sub-dropdown iq-user-dropdown">
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- TOP Nav Bar END -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="iq-card">
+                            <div class="iq-card-header d-flex justify-content-between">
+                                <div class="iq-header-title">
+                                    <h4 class="card-title">Editable Table</h4>
+                                </div>
+                            </div>
+                                <div class="iq-card-body">
+                                    <div id="table" class="table-editable">
+                                        @if (User.IsInRole("Masyarakat") || User.IsInRole("RumahSakit"))
+                                        {
+                                            <div class="mx-auto col-lg-12 col-md-6">
+                                                <!-- Widget search -->
+                                                <p class="form-message error">@ViewBag.error</p>
+                                                <div class="sidebar search text-center">
+                                                    <h4 class="mr-2 mb-3">Search</h4>
+                                                    @using (Html.BeginForm("Vaksin", "User", FormMethod.Get))
+                                                    {
+                                                        <div class="form-row">
+                                                            <div class="col-12 form-group position-relative">
+                                                                <div>@Html.TextBox("search", null, new { @class = "form-control", @autofocus = "", @autocomplete = "off", @placeholder = "No register vaksin" })</div>
+                                                                <div class="">
+                                                                    <button type="submit"
+                                                                            style="position: absolute; top: 2px; right: 6px; padding: 5px 10px; border: none; background: transparent;">
+                                                                        <i class="ri-search-line"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        }
+                                            <div class="iq-search-bar mb-3 mr-2">
+                                                @if (User.IsInRole("Produsen"))
+                                                {
+
+                                                    <i>@Html.ActionLink("Tambah Vaksin", "insertVaksin", null, new { @class = "btn btn-outline-info text-end" })</i>
+                                                }
+                                            </div>
+
+                                            <table class="table table-bordered table-responsive-md table-striped text-center">
+                                                <thead>
+                                                <th>No Register</th>
+                                                <th>Tanggal Dibuat</th>
+                                                @if (User.IsInRole("Produsen"))
+                                                {
+                                                    <th>
+                                                        Action
+                                                    </th>
+                                                }
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in ViewBag.vaksin)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                @item.no_register
+                                                            </td>
+                                                            <td>
+                                                                @item.tanggal_dibuat
+                                                            </td>
+                                                            @if (User.IsInRole("Produsen"))
+                                                            {
+                                                                <td>
+                                                                    @Html.ActionLink("Hapus", "deleteVaksin", new { id = item.no_register }, new { @class = "btn btn-outline-info", onclick = "return confirm('Apah anda yakin menghapus?');" })
+                                                                </td>
+                                                            }
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                            @if (User.IsInRole("bpom"))
+                                            {
+                                                <div class="section-title text-center py-4">
+                                                    @if (Session["vaksin"] != null)
+                                                    {
+                                                        <div><u>@Html.ActionLink("Vaksin yang sudah sampai di Rumah Sakit", "vaksinSampai", "User", new { @class = "text-danger" })</u></div>
+                                                    }
+                                                    <div><u>@Html.ActionLink("Vaksin yang sudah digunakan pasien", "vaksinDigunakan", "User", new { @class = "text-danger" })</u></div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-white iq-footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item"><a>Angelica Manurung</a></li>
+                                <li class="list-inline-item"><a>Yosafat Tambun</a></li>
+                                <li class="list-inline-item"><a>Yudhi Purba</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            Copyright 2023 <a>Vaksin Tracker</a> Kelompok 14
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer END -->
+
+            <script src="~/Assets/js/jquery.min.js"></script>
+            <script src="~/Assets/js/popper.min.js"></script>
+            <script src="~/Assets/js/bootstrap.min.js"></script>
+            <!-- Appear JavaScript -->
+            <script src="~/Assets/js/jquery.appear.js"></script>
+            <!-- Countdown JavaScript -->
+            <script src="~/Assets/js/countdown.min.js"></script>
+            <!-- Counterup JavaScript -->
+            <script src="~/Assets/js/waypoints.min.js"></script>
+            <script src="~/Assets/js/jquery.counterup.min.js"></script>
+            <!-- Wow JavaScript -->
+            <script src="~/Assets/js/wow.min.js"></script>
+            <!-- Apexcharts JavaScript -->
+            <script src="~/Assets/js/apexcharts.js"></script>
+            <!-- Slick JavaScript -->
+            <script src="~/Assets/js/slick.min.js"></script>
+            <!-- Select2 JavaScript -->
+            <script src="~/Assets/js/select2.min.js"></script>
+            <!-- Owl Carousel JavaScript -->
+            <script src="~/Assets/js/owl.carousel.min.js"></script>
+            <!-- Magnific Popup JavaScript -->
+            <script src="~/Assets/js/jquery.magnific-popup.min.js"></script>
+            <!-- Smooth Scrollbar JavaScript -->
+            <script src="~/Assets/js/smooth-scrollbar.js"></script>
+            <!-- lottie JavaScript -->
+            <script src="~/Assets/js/lottie.js"></script>
+            <!-- Chart Custom JavaScript -->
+            <script src="~/Assets/js/chart-custom.js"></script>
+            <!-- Custom JavaScript -->
+            <script src="~/Assets/js/custom.js"></script>
+</body>
+</html>

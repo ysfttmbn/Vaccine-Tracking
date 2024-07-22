@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VaksinTrackingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Akun">
+    <Key>
+      <PropertyRef Name="id_akun" />
+    </Key>
+    <Property Name="id_akun" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AkunRoleMapping">
+    <Key>
+      <PropertyRef Name="id_akunrole" />
+    </Key>
+    <Property Name="id_akunrole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_akun" Type="int" Nullable="false" />
+    <Property Name="id_role" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleMaster">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nama_role" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__AkunRoleM__id_ak__145C0A3F">
+    <End Role="Akun" Type="Self.Akun" Multiplicity="1" />
+    <End Role="AkunRoleMapping" Type="Self.AkunRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Akun">
+        <PropertyRef Name="id_akun" />
+      </Principal>
+      <Dependent Role="AkunRoleMapping">
+        <PropertyRef Name="id_akun" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AkunRoleM__id_ro__15502E78">
+    <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="1" />
+    <End Role="AkunRoleMapping" Type="Self.AkunRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMaster">
+        <PropertyRef Name="id_role" />
+      </Principal>
+      <Dependent Role="AkunRoleMapping">
+        <PropertyRef Name="id_role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VaksinTrackingModelStoreContainer">
+    <EntitySet Name="Akun" EntityType="Self.Akun" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AkunRoleMapping" EntityType="Self.AkunRoleMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleMaster" EntityType="Self.RoleMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__AkunRoleM__id_ak__145C0A3F" Association="Self.FK__AkunRoleM__id_ak__145C0A3F">
+      <End Role="Akun" EntitySet="Akun" />
+      <End Role="AkunRoleMapping" EntitySet="AkunRoleMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AkunRoleM__id_ro__15502E78" Association="Self.FK__AkunRoleM__id_ro__15502E78">
+      <End Role="RoleMaster" EntitySet="RoleMaster" />
+      <End Role="AkunRoleMapping" EntitySet="AkunRoleMapping" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

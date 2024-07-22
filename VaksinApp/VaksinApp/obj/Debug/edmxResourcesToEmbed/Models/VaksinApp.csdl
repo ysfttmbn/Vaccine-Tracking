@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VaksinTrackingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Akun">
+    <Key>
+      <PropertyRef Name="id_akun" />
+    </Key>
+    <Property Name="id_akun" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AkunRoleMappings" Relationship="Self.FK__AkunRoleM__id_ak__145C0A3F" FromRole="Akun" ToRole="AkunRoleMapping" />
+  </EntityType>
+  <EntityType Name="AkunRoleMapping">
+    <Key>
+      <PropertyRef Name="id_akunrole" />
+    </Key>
+    <Property Name="id_akunrole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_akun" Type="Int32" Nullable="false" />
+    <Property Name="id_role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Akun" Relationship="Self.FK__AkunRoleM__id_ak__145C0A3F" FromRole="AkunRoleMapping" ToRole="Akun" />
+    <NavigationProperty Name="RoleMaster" Relationship="Self.FK__AkunRoleM__id_ro__15502E78" FromRole="AkunRoleMapping" ToRole="RoleMaster" />
+  </EntityType>
+  <EntityType Name="RoleMaster">
+    <Key>
+      <PropertyRef Name="id_role" />
+    </Key>
+    <Property Name="id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nama_role" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="AkunRoleMappings" Relationship="Self.FK__AkunRoleM__id_ro__15502E78" FromRole="RoleMaster" ToRole="AkunRoleMapping" />
+  </EntityType>
+  <Association Name="FK__AkunRoleM__id_ak__145C0A3F">
+    <End Role="Akun" Type="Self.Akun" Multiplicity="1" />
+    <End Role="AkunRoleMapping" Type="Self.AkunRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Akun">
+        <PropertyRef Name="id_akun" />
+      </Principal>
+      <Dependent Role="AkunRoleMapping">
+        <PropertyRef Name="id_akun" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AkunRoleM__id_ro__15502E78">
+    <End Role="RoleMaster" Type="Self.RoleMaster" Multiplicity="1" />
+    <End Role="AkunRoleMapping" Type="Self.AkunRoleMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleMaster">
+        <PropertyRef Name="id_role" />
+      </Principal>
+      <Dependent Role="AkunRoleMapping">
+        <PropertyRef Name="id_role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VaksinApp" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Akuns" EntityType="Self.Akun" />
+    <EntitySet Name="AkunRoleMappings" EntityType="Self.AkunRoleMapping" />
+    <EntitySet Name="RoleMasters" EntityType="Self.RoleMaster" />
+    <AssociationSet Name="FK__AkunRoleM__id_ak__145C0A3F" Association="Self.FK__AkunRoleM__id_ak__145C0A3F">
+      <End Role="Akun" EntitySet="Akuns" />
+      <End Role="AkunRoleMapping" EntitySet="AkunRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AkunRoleM__id_ro__15502E78" Association="Self.FK__AkunRoleM__id_ro__15502E78">
+      <End Role="RoleMaster" EntitySet="RoleMasters" />
+      <End Role="AkunRoleMapping" EntitySet="AkunRoleMappings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\bin\KonfirmasiVaksin_Service.dll.config
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\bin\KonfirmasiVaksin_Service.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\bin\KonfirmasiVaksin_Service.pdb
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\bin\EntityFramework.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\bin\EntityFramework.SqlServer.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\bin\EntityFramework.xml
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\bin\EntityFramework.SqlServer.xml
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\obj\Debug\KonfirmasiVaksin_Service.csproj.AssemblyReference.cache
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\obj\Debug\KonfirmasiVaksin_Service.csproj.CoreCompileInputs.cache
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\obj\Debug\KonfirmasiVaksin_Service.csproj.CopyComplete
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\obj\Debug\KonfirmasiVaksin_Service.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\KonfirmasiVaksin_Service\KonfirmasiVaksin_Service\obj\Debug\KonfirmasiVaksin_Service.pdb

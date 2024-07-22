@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VaksinTracking_05ModelStoreContainer" CdmEntityContainer="PendudukDataCS">
+    <EntitySetMapping Name="Data_Penduduk">
+      <EntityTypeMapping TypeName="VaksinTracking_05Model.Data_Penduduk">
+        <MappingFragment StoreEntitySet="Data_Penduduk">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nik" ColumnName="nik" />
+          <ScalarProperty Name="nama" ColumnName="nama" />
+          <ScalarProperty Name="alamat" ColumnName="alamat" />
+          <ScalarProperty Name="jenis_kelamin" ColumnName="jenis_kelamin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

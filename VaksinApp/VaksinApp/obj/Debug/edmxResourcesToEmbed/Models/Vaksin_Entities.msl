@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VaksinTrackingModelStoreContainer" CdmEntityContainer="Vaksin_Entities">
+    <EntitySetMapping Name="Akuns">
+      <EntityTypeMapping TypeName="VaksinTrackingModel.Akun">
+        <MappingFragment StoreEntitySet="Akun">
+          <ScalarProperty Name="id_akun" ColumnName="id_akun" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AkunRoleMappings">
+      <EntityTypeMapping TypeName="VaksinTrackingModel.AkunRoleMapping">
+        <MappingFragment StoreEntitySet="AkunRoleMapping">
+          <ScalarProperty Name="id_akunrole" ColumnName="id_akunrole" />
+          <ScalarProperty Name="id_akun" ColumnName="id_akun" />
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleMasters">
+      <EntityTypeMapping TypeName="VaksinTrackingModel.RoleMaster">
+        <MappingFragment StoreEntitySet="RoleMaster">
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="nama_role" ColumnName="nama_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

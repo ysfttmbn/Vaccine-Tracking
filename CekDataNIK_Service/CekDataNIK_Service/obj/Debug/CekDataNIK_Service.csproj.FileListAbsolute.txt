@@ -1,0 +1,12 @@
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\bin\CekDataNIK_Service.dll.config
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\bin\CekDataNIK_Service.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\bin\CekDataNIK_Service.pdb
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\bin\EntityFramework.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\bin\EntityFramework.SqlServer.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\bin\EntityFramework.xml
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\bin\EntityFramework.SqlServer.xml
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\obj\Debug\CekDataNIK_Service.csproj.AssemblyReference.cache
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\obj\Debug\CekDataNIK_Service.csproj.CoreCompileInputs.cache
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\obj\Debug\CekDataNIK_Service.csproj.CopyComplete
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\obj\Debug\CekDataNIK_Service.dll
+C:\Perkuliahan\TEKNET\Vaksin Tracking_05\CekDataNIK_Service\CekDataNIK_Service\obj\Debug\CekDataNIK_Service.pdb
